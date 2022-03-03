@@ -1,1 +1,8 @@
+gcc -g p1original.c
+ ./a.out
+Enter the numerator for 1st number:1
+Enter the denominator for 1st number:4
+Enter the numerator for 2nd number:1
+Enter the denominator for 2nd number:2
+1 / 4)+(1 / 2)=(3 / 4) 
 
