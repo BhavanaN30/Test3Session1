@@ -1,34 +1,25 @@
 #include<stdio.h>
+void input(int *num1, int *den1, int *num2, int *den2)
+{
+  printf("enter four numbers\n");
+  scanf("%d %d %d %d",num1,den1,num2,den2);
+}
+void add(int num1,int den1, int num2, int den2, int *num3, int *den3)
+{
+  
+  
+  *num3=(num1*den2)+(den1*num2);
+  *den3=(den1*den2);
+  } 
+void output(int num1, int den1, int num2, int den2, int num3, int den3)
+{
+  printf("sum of fractions of %d/%d,%d/%d = %d /%d",num1,den1,num2,den2,num3,den3);
+}
 int main()
 {
-  //for initialize variables
-  int numerator1, denominator1, numerator2, denominator2, x, y, c, gcd_no;
-
-  //To take user input of numerators and denominators
-  printf("Enter the numerator for 1st number:");
-  scanf("%d",&numerator1);
-  printf("Enter the denominator for 1st number:");
-  scanf("%d",&denominator1);
-  printf("Enter the numerator for 2nd number:");
-  scanf("%d",&numerator2);
-  printf("Enter the denominator for 2nd number:");
-  scanf("%d",&denominator2);
-
-  //numerator
-  x=(numerator1*denominator2)+(denominator1*numerator2);
-
-  //denominator
-  y=denominator1*denominator2;
-
-  //Trick part.Reduce it to the simples form by using gcd.
-  for(c=1; c<= x && c<=y; ++c)
-    {
-      if(x%c==0 && y%c==0)
-        gcd_no = c;
-    }
-
-  //To display fraction of given numerators
-  printf("%d / %d)+(%d / %d)=(%d / %d)", numerator1,denominator1,numerator2,denominator2, x/gcd_no, y/gcd_no);
-
-  return 0;
-  }
+  int num1,den1,num2,den2,num3,den3;
+  input(&num1,&den1,&num2,&den2);
+  add(num1,den1,num2,den2,&num3,&den3);
+  output(num1,  den1, num2, den2, num3, den3);
+return 0;
+}
